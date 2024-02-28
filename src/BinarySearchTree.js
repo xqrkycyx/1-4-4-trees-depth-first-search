@@ -76,6 +76,14 @@ class BinarySearchTree {
 
   dfsPreOrder(values = []) {
     // your solution here
+
+    values.push(this.value);
+    if (this.left) {
+      values = this.left.dfsPreOrder(values);
+    }
+    if (this.right) {
+      values = this.right.dfsPreOrder(values);
+    }
     return values;
   }
 
