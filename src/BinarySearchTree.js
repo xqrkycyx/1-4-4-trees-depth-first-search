@@ -63,6 +63,14 @@ class BinarySearchTree {
 
   dfsInOrder(values = []) {
     // your solution here
+
+    if (this.left) {
+      values = this.left.dfsInOrder(values);
+    }
+    values.push(this.value);
+    if (this.right) {
+      values = this.right.dfsInOrder(values);
+    }
     return values;
   }
 
