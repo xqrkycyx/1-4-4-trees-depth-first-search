@@ -89,6 +89,14 @@ class BinarySearchTree {
 
   dfsPostOrder(values = []) {
     // your solution here
+
+    if (this.left) {
+      values = this.left.dfsPostOrder(values);
+    }
+    if (this.right) {
+      values = this.right.dfsPostOrder(values);
+    }
+    values.push(this.value);
     return values;
   }
 
